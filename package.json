@@ -5,8 +5,8 @@
     "main": "index.js",
     "author": "Github: OoDone",
     "bin": {
-       "@OoDone/create-project": "bin/create-project",
-       "create-project": "bin/create-project"
+       "@OoDone/create-project": "bin/kahootbotter",
+       "create-project": "bin/kahootbotter"
     },
        "publishConfig": {
        "access": "public"
@@ -15,8 +15,8 @@
         "start": "node index.js"
     },
     "keywords": [
-       "cli",
-       "create-project"
+       "kahootbotter",
+       "kahootbotter"
     ],
     "dependencies": {
         "nodejs-randomnames": "latest",
