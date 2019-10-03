@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-console.log('kahootbotter command' + process.argv[1]);
+console.log('kahootbotter command' + process.argv[2]);
