@@ -27,7 +27,8 @@ client.on("joined", () => {
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
-    question.answer(randomnumber);
+    var answer = question.correctAnswer()
+    question.answer(answer);
     randomnumber = Math.floor(Math.random() * 3);
 });
 client.on("quizEnd", () => {
