@@ -5,7 +5,7 @@
     "main": "index.js",
     "author": "Github: OoDone",
     "bin": {
-       "@your_npm_username/create-project": "bin/create-project",
+       "@OoDone/create-project": "bin/create-project",
        "create-project": "bin/create-project"
     },
        "publishConfig": {
