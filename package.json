@@ -4,6 +4,10 @@
     "version": "1.0.2",
     "main": "index.js",
     "author": "Github: OoDone",
+    {
+    "name": "kahoot",
+    "bin": "./kahootbotter.js"
+    },
     "scripts": {
         "start": "node index.js"
     },
