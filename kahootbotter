@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 //console.log('kahootbotter command' + process.argv[2]);
 if (process.argv[2] != null) {
-  require(index.js);
+  require('./index.js');
 } else if (process.argv[2] == null) {
   console.log("Usage: kahootbotter <game pin> <amount of bots(20 max)>");
 }
