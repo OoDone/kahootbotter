@@ -1,7 +1,7 @@
 {
     "name": "KahootBotter",
     "description": "A Opensource kahootbotter",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "index.js",
     "author": "Github: OoDone",
     "bin": {
