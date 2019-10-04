@@ -9,16 +9,16 @@ if (cluster.isMaster) {
   console.log("name: " + global.name);
   console.log("amount: " + global.amount);
 
-  let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-  async function lol () {
+  //let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  //async function lol () {
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       var worker = cluster.fork();
       worker.send(global.name);
       //worker.send(global.rn);
-      lol sleep();
+      //lol sleep();
     }
-  }
+  //}
 
     cluster.on('exit', function () {
         cluster.fork();
