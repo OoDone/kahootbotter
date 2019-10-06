@@ -5,8 +5,8 @@
     "main": "index.js",
     "author": "Github: OoDone",
     "bin": {
-       "kahootbott": "./kahootbotter",
-       "kahootbott": "./kahootbotter"
+       "kahootbotter": "./kahootbotter",
+       "kahootbotter": "./kahootbotter"
     },
        "publishConfig": {
        "access": "public"
