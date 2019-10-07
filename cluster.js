@@ -13,7 +13,7 @@ if (cluster.isMaster) {
   console.log("amount: " + global.amount);
 
   //let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-  //async function lol () {
+  async function lol () {
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       var worker = cluster.fork();
@@ -22,7 +22,8 @@ if (cluster.isMaster) {
       //worker.send(global.rn);
       //lol sleep();
     }
-  //}
+  }
+  lol();
 
     cluster.on('exit', function () {
         cluster.fork();
