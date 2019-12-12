@@ -36,7 +36,11 @@ wsServer.on('request', function(request) {
     }
   });
   const interval = setInterval(function getamount() {
-    connection.send("Amount of bots online");
+    var amount2 = global.bots;
+    var adata = '{"' + 'amount' + '":"' + amount2 + '"}'
+    if (amount2 != null) {
+      connection.send(adata);
+    }
   });
 }, 3000);
 
