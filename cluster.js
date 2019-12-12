@@ -31,6 +31,7 @@ if (cluster.isMaster) {
     var amount = cluster.workers.length();
     global.bots = amount;
   }
+  interval();
 
     cluster.on('exit', function () {
         cluster.fork();
