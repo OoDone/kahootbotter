@@ -41,10 +41,8 @@ wsServer.on('request', function(request) {
     if (amount2 != null) {
       connection.send(adata);
     }
-  });
-  }, 3000);
+  })}, 3000);
 
   connection.on('close', function(connection) {
     // close user connection
   });
-});
