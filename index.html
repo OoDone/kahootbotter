@@ -14,7 +14,38 @@
 </form>
  <p id="demo"></p>
 <script>
-SCRIPT HERE
+ var gpin;
+ var bamount;
+ function sendToServer() {
+  gpin = parseInt(document.getElementById("gpin").value);
+  bamount = parseInt(document.getElementById("bamount").value);
+ if ((gpin == nan) || (bamount == nan)) {
+  alert("Error insert a valid number for Game pin and Bot Amount");
+ } else {
+  var data = '{"' + "gpin" + '":"' + gpin + '", "' + "amount" + '": "' + bamount + '", "' + 'first' + '":"' + true + '"}'
+  connection.send(data);
+ }
+  }
+ 
+ var connection = new WebSocket('wss://ffamode.herokuapp.com');
+  
+  connection.onopen = function () {
+    connection.send("Hello server!");
+    console.log('opened websocket');
+  };
+  connection.onerror = function (error) {
+    console.log('a data sending error occured:' + error);
+  };
+  connection.onmessage = function (message) {
+   var data = JSON.parse(message.data);
+   if (data['first']) {
+    if (data['success'] == true) {
+     alert("botting " + gpin + " with " + bamount + " bots!");
+    } else if (data['success'] == false) {
+     alert('Error: ' + data['err']);
+    }
+   }
+  };
   </script>
 </body>
 </html>
