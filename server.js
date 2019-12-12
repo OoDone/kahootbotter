@@ -25,12 +25,20 @@ wsServer.on('request', function(request) {
       var data = message.utf8Data;
       var parseJson = JSON.parse(data);
       if (parseJson['first'] == true) {
-        global.gpin = parseJson['gpin'];
-        global.bamount = parseJson['amount'];
+        var gpin = parseJson['gpin'];
+        var bamount = parseJson['amount'];
+        global.name = gpin;
+        global.amount = bamount;
+        require('./cluster.js');
       } else if (parseJson['first'] == false) {
+        //handle update messages
       }
     }
   });
+  const interval = setInterval(function getamount() {
+    connection.send("Amount of bots online");
+  });
+}, 3000);
 
   connection.on('close', function(connection) {
     // close user connection
