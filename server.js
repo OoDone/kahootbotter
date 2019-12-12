@@ -42,7 +42,7 @@ wsServer.on('request', function(request) {
       connection.send(adata);
     }
   });
-}, 3000);
+  }, 3000);
 
   connection.on('close', function(connection) {
     // close user connection
