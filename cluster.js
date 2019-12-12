@@ -24,6 +24,13 @@ if (cluster.isMaster) {
     }
   }
   lol();
+  function interval() {
+    return setInterval(sendLength, 3000);
+  }
+  function sendLength() {
+    var amount = cluster.workers.length();
+    global.bots = amount;
+  }
 
     cluster.on('exit', function () {
         cluster.fork();
