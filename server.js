@@ -6,7 +6,7 @@ var server = http.createServer(function(req, res) {
   if (req.url == "/") {
             fs.readFile("/index.html", function (err, data2) {
                 if (err) {
-                    res.writehead(404);
+                    res.writeHead(404);
                     res.write(err);
                     res.end();
                 } else {
