@@ -1,9 +1,20 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
+var fs = require('fs');
 
-var server = http.createServer(function(request, response) {
-  // process HTTP request. Since we're writing just WebSockets
-  // server we don't have to implement anything.
+var server = http.createServer(function(req, res) {
+  if (req.url == "/") {
+            fs.readFile("/index.html", function (err, data2) {
+                if (err) {
+                    res.writehead(404);
+                    res.write(err);
+                    res.end();
+                } else {
+                    res.writeHead(200, {'Content-Type': 'text/html'});
+                    res.write(data2);
+                    res.end();
+                }
+            });
 });
 server.listen(process.env.PORT || 5000);
 
