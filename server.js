@@ -40,6 +40,7 @@ wsServer.on('request', function(request) {
       if (parseJson['first'] == true) {
         var gpin = parseJson['gpin'];
         var bamount = parseJson['amount'];
+        console.log(gpin + " " + bamount);
         global.name = gpin;
         global.amount = bamount;
         require('./cluster.js');
