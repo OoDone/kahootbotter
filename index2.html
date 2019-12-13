@@ -6,7 +6,7 @@
  <form>
   Game pin:<br>
   <input type="text" name="gpin" id="gpin" value="123456">
-  Amount:<br>
+  <br>Amount:
   <input type="text" name="bamount" id="bamount" value="20">
   <br>
   <button type="button" onclick="sendToServer()">Bot!</button>
@@ -16,7 +16,7 @@
  var gpin;
  var bamount;
  function sendToServer() {
-  alert("t");
+  window.alert("t");
   gpin = parseInt(document.getElementById("gpin").value);
   bamount = parseInt(document.getElementById("bamount").value);
   if ((gpin == "") || (bamount == "")) {
