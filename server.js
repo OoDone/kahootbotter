@@ -35,24 +35,25 @@ wsServer.on('request', function(request) {
   // all messages from users here.
   connection.on('message', function(message) {
       console.log("Message recieved");
-    if (message.type === 'utf8') {
+      if (message.type === 'utf8') {
         console.log("utf8 data true");
-      var data = message.utf8Data;
-      var parseJson = JSON.parse(data);
-      if (parseJson['first'] == true) {
-        var gpin = parseJson['gpin'];
-        var bamount = parseJson['amount'];
-        console.log(gpin + " " + bamount);
-        global.name = gpin;
-        global.amount = bamount;
-        require('./cluster.js');
-        var bdata = '{"' + 'success' + '":"' + 'true' + '","' + 'first' + '":"' + 'true' + '"}'
-        connection.send(bdata);
-      } else if (parseJson['first'] == false) {
-        var gpin = parseJson['gpin'];
-        var bamount = parseJson['amount'];
-        console.log(gpin + " " + bamount);
-      }
+        var data = message.utf8Data;
+        console.log(data + " " + message);
+        var parseJson = JSON.parse(data);
+        if (parseJson['first'] == true) {
+            var gpin = parseJson['gpin'];
+            var bamount = parseJson['amount'];
+            console.log(gpin + " " + bamount);
+            global.name = gpin;
+            global.amount = bamount;
+            require('./cluster.js');
+            var bdata = '{"' + 'success' + '":"' + 'true' + '","' + 'first' + '":"' + 'true' + '"}'
+            connection.send(bdata);
+        } else if (parseJson['first'] == false) {
+            var gpin = parseJson['gpin'];
+            var bamount = parseJson['amount'];
+            console.log(gpin + " " + bamount);
+        }
     }
   });
   const interval = setInterval(function getamount() {
