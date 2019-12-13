@@ -29,7 +29,7 @@
  var connection = new WebSocket('wss://kbotui.herokuapp.com');
   
   connection.onopen = function () {
-    connection.send("Hello server!");
+    //connection.send("Hello server!");
     console.log('opened websocket');
   };
   connection.onerror = function (error) {
