@@ -16,15 +16,16 @@
  var gpin;
  var bamount;
  function sendToServer() {
+  alert("t");
   gpin = parseInt(document.getElementById("gpin").value);
   bamount = parseInt(document.getElementById("bamount").value);
- if ((gpin == "") || (bamount == "")) {
-  alert("Error insert a valid number for Game pin and Bot Amount");
- } else {
-  var data = '{"' + 'gpin' + '":"' + gpin + '", "' + 'amount' + '": "' + bamount + '", "' + 'first' + '":"' + 'true' + '"}'
-  connection.send(data);
- }
+  if ((gpin == "") || (bamount == "")) {
+   alert("Error insert a valid number for Game pin and Bot Amount");
+  } else {
+   var data = '{"' + 'gpin' + '":"' + gpin + '", "' + 'amount' + '": "' + bamount + '", "' + 'first' + '":"' + 'true' + '"};
+   connection.send(data);
   }
+ }
  
  var connection = new WebSocket('wss://kbotui.herokuapp.com');
   
