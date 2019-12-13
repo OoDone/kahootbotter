@@ -29,7 +29,7 @@ wsServer = new WebSocketServer({
 // WebSocket server
 wsServer.on('request', function(request) {
   var connection = request.accept(null, request.origin);
-  var index = clients.push(connection) - 1;
+  //var index = clients.push(connection) - 1;
   console.log((new Date()) + ' Connection accepted.');
   // This is the most important callback for us, we'll handle
   // all messages from users here.
