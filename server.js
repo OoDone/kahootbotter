@@ -22,8 +22,7 @@ server.listen(process.env.PORT || 5000);
 
 // create the server
 wsServer = new WebSocketServer({
-  httpServer: server,
-  keepAlive: 10000
+  httpServer: server
 });
 
 // WebSocket server
@@ -44,10 +43,12 @@ wsServer.on('request', function(request) {
         global.name = gpin;
         global.amount = bamount;
         require('./cluster.js');
-        var bdata = '{"' + 'success' + '":"' + true + '","' + 'first' + '":"' + true + '"}'
+        var bdata = '{"' + 'success' + '":"' + 'true' + '","' + 'first' + '":"' + 'true' + '"}'
         connection.send(bdata);
       } else if (parseJson['first'] == false) {
-        //handle update messages
+        var gpin = parseJson['gpin'];
+        var bamount = parseJson['amount'];
+        console.log(gpin + " " + bamount);
       }
     }
   });
