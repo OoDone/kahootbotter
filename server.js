@@ -5,7 +5,7 @@ var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
   if (req.url == "/index") {
-            fs.readFile("/index2.html", function (err, data2) {
+            fs.readFile("./index2.html", function (err, data2) {
                 if (err) {
                     res.writeHead(404);
                     res.write("error");
