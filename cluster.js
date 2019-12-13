@@ -29,7 +29,7 @@ if (cluster.isMaster) {
       cluster.workers[id].kill();
     }
     console.log("killed workers");
-    require('/server');
+    require('./server');
   }
   lol();
   kill();
