@@ -18,7 +18,7 @@
  function sendToServer() {
   gpin = parseInt(document.getElementById("gpin").value);
   bamount = parseInt(document.getElementById("bamount").value);
- if ((gpin == null) || (bamount == null)) {
+ if ((gpin == "") || (bamount == "")) {
   alert("Error insert a valid number for Game pin and Bot Amount");
  } else {
   var data = '{"' + 'gpin' + '":"' + gpin + '", "' + 'amount' + '": "' + bamount + '", "' + 'first' + '":"' + 'true' + '"}'
