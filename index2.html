@@ -4,15 +4,16 @@
 
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
  <form>
-  Game pin:<br>
-  <input type="text" name="gpin" id="gpin" value="123456">
+  <br>Game pin:
+  <input type="text" name="gpinn" id="gpin" value="123456">
   <br>Amount:
-  <input type="text" name="bamount" id="bamount" value="20">
+  <input type="text" name="bamountn" id="bamount" value="20">
   <br>
   <button type="button" onclick="sendToServer()">Bot!</button>
 </form>
  <p id="demo"></p>
 <script>
+ var connection = new WebSocket('wss://kbotui.herokuapp.com');
  var gpin;
  var bamount;
  function sendToServer() {
@@ -27,7 +28,6 @@
   }
  }
  
- var connection = new WebSocket('wss://kbotui.herokuapp.com');
   
   connection.onopen = function () {
    connection.send('{"xd":"hello server!"}');
