@@ -43,6 +43,8 @@ wsServer.on('request', function(request) {
         global.name = gpin;
         global.amount = bamount;
         require('./cluster.js');
+        var bdata = '{"' + 'success' + '":"' + true + '"}'
+        connection.send(bdata);
       } else if (parseJson['first'] == false) {
         //handle update messages
       }
