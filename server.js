@@ -22,7 +22,8 @@ server.listen(process.env.PORT || 5000);
 
 // create the server
 wsServer = new WebSocketServer({
-  httpServer: server
+  httpServer: server,
+  keepalive: 1000
 });
 
 // WebSocket server
@@ -33,7 +34,7 @@ wsServer.on('request', function(request) {
   // This is the most important callback for us, we'll handle
   // all messages from users here.
   connection.on('message', function(message) {
-    if (!message.type === 'utf8') {
+    if (message.type === 'utf8') {
       var data = message.utf8Data;
       var parseJson = JSON.parse(data);
       if (parseJson['first'] == true) {
