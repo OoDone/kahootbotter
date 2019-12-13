@@ -30,7 +30,6 @@ if (cluster.isMaster) {
       cluster.workers[id].kill();
     }
     console.log("killed workers");
-    process.exit(0);
     require('./server');
   }
   kill();
