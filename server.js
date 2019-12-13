@@ -34,7 +34,9 @@ wsServer.on('request', function(request) {
   // This is the most important callback for us, we'll handle
   // all messages from users here.
   connection.on('message', function(message) {
+      console.log("Message recieved");
     if (message.type === 'utf8') {
+        console.log("utf8 data true");
       var data = message.utf8Data;
       var parseJson = JSON.parse(data);
       if (parseJson['first'] == true) {
