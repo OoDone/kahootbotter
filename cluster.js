@@ -28,7 +28,7 @@ if (cluster.isMaster) {
     return setInterval(sendLength, 3000);
   }
   function sendLength() {
-    var amount = cluster.workers.length();
+    var amount = cluster.workers.length;
     global.bots = amount;
   }
   interval();
