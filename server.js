@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res) {
             fs.readFile("/index2.html", function (err, data2) {
                 if (err) {
                     res.writeHead(404);
-                    res.write(err);
+                    res.write("error");
                     res.end();
                 } else {
                     res.writeHead(200, {'Content-Type': 'text/html'});
