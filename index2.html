@@ -19,8 +19,8 @@
  function sendToServer() {
   gpin = parseInt(document.getElementById("gpin").value);
   bamount = parseInt(document.getElementById("bamount").value);
-  window.alert("gpin: " + gpin + " amount: " + bamount);
-  if ((gpin == null) || (bamount == null)) {
+  //window.alert("gpin: " + gpin + " amount: " + bamount);
+  if ((gpin = NaN) || (bamount = NaN)) {
    window.alert("Error insert a valid number for Game pin and Bot Amount");
   } else {
    var data = '{"' + 'gpin' + '":"' + gpin + '", "' + 'amount' + '": "' + bamount + '", "' + 'first' + '":"' + 'true' + '"}';
