@@ -38,8 +38,8 @@ wsServer.on('request', function(request) {
       if (message.type === 'utf8') {
         console.log("utf8 data true");
         var data = message.utf8Data;
-        console.log(data + " " + message);
         var parseJson = JSON.parse(data);
+         console.log(parseJson['first']);
         if (parseJson['first'] == true) {
             var gpin = parseJson['gpin'];
             var bamount = parseJson['amount'];
