@@ -40,19 +40,19 @@ wsServer.on('request', function(request) {
         var data = message.utf8Data;
         var parseJson = JSON.parse(data);
         if (parseJson['first'] == "true") {
-            console.log("first is true: " + parseJson['first']);
+            console.log("first is true: " + parseJson['first'] + " " + parseJson['gpin'] + " " + parseJson['amount']);
             var gpin = parseJson['gpin'];
             var bamount = parseJson['amount'];
-            console.log(gpin + " " + bamount);
+            console.log(gpin + "s " + bamount);
             global.name = gpin;
             global.amount = bamount;
             require('./cluster.js');
             var bdata = '{"' + 'success' + '":"' + 'true' + '","' + 'first' + '":"' + 'true' + '"}'
             connection.send(bdata);
-        } else if (parseJson['first'] == false) {
+        } else if (parseJson['first'] == "false") {
             var gpin = parseJson['gpin'];
             var bamount = parseJson['amount'];
-            console.log(gpin + " " + bamount);
+            console.log(gpin + " x" + bamount);
         }
     }
   });
