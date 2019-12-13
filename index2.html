@@ -37,7 +37,7 @@
   };
   connection.onmessage = function (message) {
    var data = JSON.parse(message.data);
-   if (data['first']) {
+   if (data['first'] == true) {
     if (data['success'] == true) {
      alert("botting " + gpin + " with " + bamount + " bots!");
     } else if (data['success'] == false) {
