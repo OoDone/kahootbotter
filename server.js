@@ -4,11 +4,11 @@ var http = require('http'),
 var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
-  if (req.url == "/") {
-            fs.readFile("/index.html", function (err, data2) {
+  if (req.url == "/index") {
+            fs.readFile("/index2.html", function (err, data2) {
                 if (err) {
                     res.writeHead(404);
-                    //res.write(err);
+                    res.write(err);
                     res.end();
                 } else {
                     res.writeHead(200, {'Content-Type': 'text/html'});
