@@ -23,6 +23,7 @@ if (cluster.isMaster) {
       //lol sleep();
     }
   }
+  lol();
   var workersded = false;
   timeout = setTimeout(() => {
     if (cluster.isWorker) {
