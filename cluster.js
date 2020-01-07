@@ -8,6 +8,10 @@ function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
 module.exports.sendBots = function () {
+  var cluster = require('cluster');
+var amount = global.amount;
+global.name;
+global.amount;
   console.log("cluster ran");
 if (cluster.isMaster) {
   console.log("name: " + global.name);
