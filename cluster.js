@@ -33,12 +33,10 @@ if (cluster.isMaster) {
   lol();
   var workersded = false;
   timeout = setInterval(() => {
-    if (cluster.isWorker) {
       worker.kill();
       if (workersded == false) {
         console.log('killing workers.');
         workersded = true;
-      }
     }
   }, 20000);
   //function interval() {
