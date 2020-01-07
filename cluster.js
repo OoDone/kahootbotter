@@ -25,12 +25,14 @@ if (cluster.isMaster) {
   }
   var workersded = false;
   timeout = setTimeout(() => {
+    if (cluster.isWorker) {
       worker.kill();
       if (workersded == false) {
         console.log('killing workers.');
         workersded = true;
       } else {
       }
+    }
     }, 20000);
   function interval() {
     return setInterval(sendLength, 3000);
@@ -42,8 +44,8 @@ if (cluster.isMaster) {
   interval();
 
     cluster.on('exit', function () {
-        cluster.fork();
-        //console.log("name2: " + global.name);
+        //cluster.fork();
+        console.log("cluster exit ");
     });
 
 } else {
