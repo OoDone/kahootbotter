@@ -7,7 +7,7 @@ global.amount;
 function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
-
+function sendBots() {
 if (cluster.isMaster) {
   console.log("name: " + global.name);
   console.log("amount: " + global.amount);
@@ -51,6 +51,7 @@ if (cluster.isMaster) {
 } else {
     require('./bot');
     //console.log("name3: " + global.name);
+}
 }
 
 
