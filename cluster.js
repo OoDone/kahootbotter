@@ -18,6 +18,7 @@ if (cluster.isMaster) {
     console.log("function lol ran");
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
+      console.log("fork runnng");
       var worker = cluster.fork();
       await wait(500);
       worker.send(global.name);
@@ -36,14 +37,14 @@ if (cluster.isMaster) {
       }
     }
   }, 20000);
-  function interval() {
-    return setInterval(sendLength, 3000);
-  }
-  function sendLength() {
-    var amount = cluster.workers.length;
-    global.bots = amount;
-  }
-  interval();
+  //function interval() {
+   // return setInterval(sendLength, 3000);
+  //}
+  //function sendLength() {
+    //var amount = cluster.workers.length;
+    //global.bots = amount;
+  //}
+  //interval();
 
     cluster.on('exit', function () {
         //cluster.fork();
