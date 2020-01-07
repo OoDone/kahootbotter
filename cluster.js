@@ -34,6 +34,7 @@ if (cluster.isMaster) {
   lol();
   var workersded = false;
   timeout = setInterval(() => {
+    cluster.disconnect();
     for (var id in cluster.workers) {
       cluster.workers[id].kill();
     }
@@ -53,7 +54,7 @@ if (cluster.isMaster) {
 
     cluster.on('exit', function () {
         //cluster.fork();
-        console.log("cluster exit");
+        //console.log("cluster exit");
     });
 
 } else {
