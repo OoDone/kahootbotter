@@ -8,12 +8,14 @@ function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
 module.exports.sendBots = function () {
+  console.log("cluster ran");
 if (cluster.isMaster) {
   console.log("name: " + global.name);
   console.log("amount: " + global.amount);
 
   //let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   async function lol () {
+    console.log("function lol ran");
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       var worker = cluster.fork();
@@ -31,10 +33,9 @@ if (cluster.isMaster) {
       if (workersded == false) {
         console.log('killing workers.');
         workersded = true;
-      } else {
       }
     }
-    }, 20000);
+  }, 20000);
   function interval() {
     return setInterval(sendLength, 3000);
   }
@@ -46,7 +47,7 @@ if (cluster.isMaster) {
 
     cluster.on('exit', function () {
         //cluster.fork();
-        console.log("cluster exit ");
+        console.log("cluster exit");
     });
 
 } else {
