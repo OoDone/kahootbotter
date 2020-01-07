@@ -34,14 +34,14 @@ if (cluster.isMaster) {
   lol();
   var workersded = false;
   timeout = setInterval(() => {
-    cluster.disconnect();
-    for (var id in cluster.workers) {
-      cluster.workers[id].kill();
-    }
-      if (workersded == false) {
+    if (workersded == false) {
         console.log('killing workers.');
         workersded = true;
     }
+    for (var id in cluster.workers) {
+      cluster.workers[id].kill();
+    }
+    cluster.disconnect();
   }, 20000);
   //function interval() {
    // return setInterval(sendLength, 3000);
