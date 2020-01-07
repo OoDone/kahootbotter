@@ -34,8 +34,8 @@ if (cluster.isMaster) {
   lol();
   var workersded = false;
   timeout = setInterval(() => {
-    for (const id in cluster.workers) {
-      cluster.worker[id].kill;
+    for (var id in cluster.workers) {
+      cluster.workers[id].kill();
     }
       if (workersded == false) {
         console.log('killing workers.');
