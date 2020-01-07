@@ -13,6 +13,7 @@ var amount = global.amount;
 global.name;
 global.amount;
   console.log("cluster ran");
+  var worker;
 if (cluster.isMaster) {
   console.log("name: " + global.name);
   console.log("amount: " + global.amount);
@@ -23,7 +24,7 @@ if (cluster.isMaster) {
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       console.log("fork runnng");
-      var worker = cluster.fork();
+      worker = cluster.fork();
       await wait(500);
       worker.send(global.name);
       //worker.send(global.rn);
