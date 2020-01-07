@@ -2,6 +2,7 @@ var WebSocketServer = require('websocket').server;
 var http = require('http'),
     https = require('https');
 var fs = require('fs');
+var cluster = require('./cluster.js');
 
 var server = http.createServer(function(req, res) {
   if (req.url == "/index") {
@@ -46,7 +47,7 @@ wsServer.on('request', function(request) {
             console.log(gpin + "s " + bamount);
             global.name = gpin;
             global.amount = bamount;
-            require('./cluster.js');
+            cluster.sendBots();
             var bdata = '{"' + 'success' + '":"' + 'true' + '","' + 'first' + '":"' + 'true' + '"}'
             connection.send(bdata);
         } else if (parseJson['first'] == "false") {
