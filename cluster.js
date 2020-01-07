@@ -25,7 +25,7 @@ if (cluster.isMaster) {
   }
   lol();
   var workersded = false;
-  timeout = setTimeout(() => {
+  timeout = setInterval(() => {
     if (cluster.isWorker) {
       worker.kill();
       if (workersded == false) {
