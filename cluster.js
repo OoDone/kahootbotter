@@ -23,16 +23,15 @@ if (cluster.isMaster) {
       //lol sleep();
     }
   }
-  lol();
-  async function kill () {
-    await wait(45000);
-    for (var id in cluster.workers) {
-      cluster.workers[id].kill();
-    }
-    console.log("killed workers");
-    require('./server');
-  }
-  kill();
+  var workersded = false;
+  timeout = setTimeout(() => {
+      worker.kill();
+      if (workersded == false) {
+        console.log('killing workers.');
+        workersded = true;
+      } else {
+      }
+    }, 20000);
   function interval() {
     return setInterval(sendLength, 3000);
   }
