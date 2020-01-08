@@ -26,7 +26,9 @@ if (cluster.isMaster) {
     }
   }
   lol();
-
+  cluster.on('message', function (msg) {
+    console.log("Master recieved message " + msg);
+  });
     cluster.on('exit', function () {
         cluster.fork();
         //console.log("name2: " + global.name);
