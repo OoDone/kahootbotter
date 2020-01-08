@@ -18,12 +18,10 @@ process.on('message', function(msg) {
   try {
         var jsondata = JSON.parse(msg);
         if (jsondata['ready'] == true) {
-        console.log("worker " + worker.id + " is ready!");
+          console.log("worker " + worker.id + " is ready!");
         }
     } catch (e) {
-        return false;
     }
-  }
   console.log("msg: " + msg);
   game_pin = msg;
   console.log("Joining kahoot...  ");
