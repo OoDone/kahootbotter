@@ -9,18 +9,8 @@ search.search().then(results=>{
   //console.log(results['title']);
   //console.log(results2);
   var dat = JSON.parse(results2);
-  let configKeys = Object.keys(dat.questions);
-configKeys.forEach((rand)=>{
-	console.log(rand);
-	var itemKeys = Object.keys(dat[rand]);
-  console.log(itemKeys);
-  for(var i=0;i<itemKeys.length;i++){
-  	let randName = itemKeys[i];
-  	console.log(config.configuration[rand][randName]['choices']);
-    //console.log(config.configuration[rand][randName]['key2']);
-  }
-});
-  var correct = dat['Language'];
+  var correct = Object.keys(dat);
+  console.log(correct);
   //['0']['choices']['0']['correct'];
-  console.log(correct + " X D " + results['Language'] + " " + results.uuid);
+  //console.log(correct + " X D " + results['Language'] + " " + results.uuid);
 });
