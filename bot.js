@@ -28,9 +28,12 @@ client.on("joined", () => {
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
-    question.answer(randomnumber);
-    randomnumber = Math.floor(Math.random() * 3);
+  question.answer(cluster.worker.id):
+  
 });
+client.on("questionEnd", question => {
+  console.log("did i get it right? " + question.correct());
+}
 client.on("quizEnd", () => {
     console.log("The quiz has ended. - bot" + cluster.worker.id);
 });
