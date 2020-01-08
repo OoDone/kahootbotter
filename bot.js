@@ -19,6 +19,7 @@ process.on('message', function(msg) {
     var jsondata = JSON.parse(msg);
     if (jsondata['ready'] == true) {
       //tell master worker X is ready
+      console.log("worker " + worker.id + " is ready!");
     }
   }
   console.log("msg: " + msg);
