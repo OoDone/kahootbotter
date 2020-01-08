@@ -26,7 +26,7 @@ if (cluster.isMaster) {
     }
   }
   lol();
-  cluster.on('message', function(msg2) {
+  worker.on('message', function(msg2) {
     console.log("Master recieved message " + msg2);
   });
     cluster.on('exit', function () {
