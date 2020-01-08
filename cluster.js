@@ -13,12 +13,12 @@ function wait(milleseconds) {
 if (cluster.isMaster) {
   console.log("name: " + global.name);
   console.log("amount: " + global.amount);
-
+var worker;
   //let sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
   async function lol () {
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
-      var worker = cluster.fork();
+      worker = cluster.fork();
       await wait(500);
       worker.send(global.name);
       //worker.send(global.rn);
