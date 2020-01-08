@@ -5,6 +5,8 @@ var randomName = NameGenerator.getRandomName();
 //const cluster = require('cluster');
 var game_pin = 0;
 var cluster = require('cluster');
+var qstart;
+var q;
 
 if (cluster.isMaster) {
   console.log('I am master');
@@ -15,11 +17,17 @@ if (cluster.isMaster) {
 }
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
+  if (msg > 0) {
+    if (qstart == true) {
+      q.answer(msg);
+    }
+  } else {
   console.log("msg: " + msg);
   game_pin = msg;
   console.log("Joining kahoot...  ");
   client.join(game_pin, 'bot' + cluster.worker.id);
   //client.join(game_pin, randomName);
+  }
 
 });
 var answer;
@@ -31,7 +39,12 @@ client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
   answer = cluster.worker.id - 1;
-  question.answer(answer);
+  if (cluster.worker.id != 4) {
+    question.answer(answer);
+  } else {
+    qstart = true;
+    q = question;
+  }
   
 });
 client.on("questionEnd", question => {
