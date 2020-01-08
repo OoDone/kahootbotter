@@ -2,10 +2,7 @@
 //console.log('kahootbotter command' + process.argv[2]);
 if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
-  global.amount = process.argv[3];
   require('./cluster.js');
 } else if (process.argv[2] == null) {
-  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)>");
-} else if (process.argv[3] == null) {
-  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)>");
+  console.log("Usage: kahootbotter <game pin>");
 }
