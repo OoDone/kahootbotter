@@ -28,11 +28,19 @@ client.on("joined", () => {
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
-  question.answer(cluster.worker.id);
+  var answer = cluster.worker.id - 1;
+  question.answer(answer);
   
 });
 client.on("questionEnd", question => {
   console.log("did i get it right? " + question.correct);
+  var correct = question.correct;
+  if (correct) {
+    console.log("YES TRIGGERED");
+    cluster.worker.send('true');
+  } else {
+    console.log("YES TRIGGERED but got answer wrong :(");
+  }
 });
 client.on("quizEnd", () => {
     console.log("The quiz has ended. - bot" + cluster.worker.id);
