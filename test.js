@@ -7,9 +7,9 @@ const search = new Searcher("January", config);
 search.search().then(results=>{
   var results2 = JSON.stringify(results);
   //console.log(results['title']);
-  console.log(results2);
+  //console.log(results2);
   var dat = JSON.parse(results2);
   var correct = dat['Language'];
   //['0']['choices']['0']['correct'];
-  console.log(correct + " X D " + results['Language']);
+  console.log(correct + " X D " + results['Language'] + " " + results.uuid);
 });
