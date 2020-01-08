@@ -32,7 +32,7 @@ client.on("questionStart", question => {
   
 });
 client.on("questionEnd", question => {
-  console.log("did i get it right? " + question.correctAnswer);
+  console.log("did i get it right? " + question.correct);
 });
 client.on("quizEnd", () => {
     console.log("The quiz has ended. - bot" + cluster.worker.id);
