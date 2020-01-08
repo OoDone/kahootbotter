@@ -11,5 +11,5 @@ search.search().then(results=>{
   var dat = JSON.parse(results2);
   var correct = dat['type'];
   //['0']['choices']['0']['correct'];
-  console.log(correct + results['type']);
+  console.log(correct + " X D " + results['type']);
 });
