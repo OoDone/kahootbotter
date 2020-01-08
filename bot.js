@@ -22,13 +22,15 @@ process.on('message', function(msg) {
   //client.join(game_pin, randomName);
 
 });
+var answer;
 client.on("joined", () => {
     console.log("I joined the Kahoot!");
+    answer = cluster.worker.id - 1;
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
-  var answer = cluster.worker.id - 1;
+  answer = cluster.worker.id - 1;
   question.answer(answer);
   
 });
@@ -37,8 +39,8 @@ client.on("questionEnd", question => {
   var correct = question.correct;
   if (correct) {
     console.log("YES TRIGGERED");
-    process.send("true");
-    process.send('true');
+    var data = '{"answer":"' + answer + '"}'
+    process.send(data);
   } else {
     console.log("YES TRIGGERED but got answer wrong :(");
   }
