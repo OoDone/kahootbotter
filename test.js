@@ -9,6 +9,7 @@ search.search().then(results=>{
   //console.log(results['title']);
   console.log(results2);
   var dat = JSON.parse(results2);
-  var correct = dat['questions']['0']['choices']['0']['correct'];
+  var correct = dat['questions'];
+  //['0']['choices']['0']['correct'];
   console.log(correct);
 });
