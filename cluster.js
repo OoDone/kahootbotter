@@ -26,7 +26,7 @@ if (cluster.isMaster) {
       console.log("fork runnng");
       worker = cluster.fork();
       await wait(500);
-      var data = '{"json":"' + true + '","name":"' + global.name + '"}'
+      var data = '{"json":"' + false + '","name":"' + global.name + '"}'
       worker.send(data);
       //worker.send(global.rn);
       //lol sleep();
