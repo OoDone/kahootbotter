@@ -17,7 +17,7 @@ if (cluster.isMaster) {
 }
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
-  if (msg > 0) {
+  if (msg < 5) {
     if (qstart == true) {
       q.answer(msg);
     }
