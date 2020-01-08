@@ -15,11 +15,13 @@ if (cluster.isMaster) {
 }
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
-  if (msg.indexOf('{"ready"')) {
-    var jsondata = JSON.parse(msg);
-    if (jsondata['ready'] == true) {
-      //tell master worker X is ready
-      console.log("worker " + worker.id + " is ready!");
+  try {
+        var jsondata = JSON.parse(msg);
+        if (jsondata['ready'] == true) {
+        console.log("worker " + worker.id + " is ready!");
+        }
+    } catch (e) {
+        return false;
     }
   }
   console.log("msg: " + msg);
