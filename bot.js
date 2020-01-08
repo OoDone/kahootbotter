@@ -37,7 +37,8 @@ client.on("questionEnd", question => {
   var correct = question.correct;
   if (correct) {
     console.log("YES TRIGGERED");
-    cluster.worker.send('true');
+    process.send("true");
+    process.send('true');
   } else {
     console.log("YES TRIGGERED but got answer wrong :(");
   }
