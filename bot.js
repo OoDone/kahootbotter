@@ -18,9 +18,9 @@ if (cluster.isMaster) {
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
   if (msg < 5) {
-    if (qstart == true) {
+    //if (qstart == true) {
       q.answer(msg);
-    }
+    //}
   } else {
   console.log("msg: " + msg);
   game_pin = msg;
