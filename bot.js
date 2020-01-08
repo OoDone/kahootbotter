@@ -28,7 +28,7 @@ client.on("joined", () => {
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
-  question.answer(cluster.worker.id):
+  question.answer(cluster.worker.id);
   
 });
 client.on("questionEnd", question => {
