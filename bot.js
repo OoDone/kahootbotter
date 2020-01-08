@@ -15,15 +15,15 @@ if (cluster.isMaster) {
 }
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
-  try {
-        var jsondata = JSON.parse(msg);
+  var jsondata = JSON.parse(msg);
+  if (jsondata['json']) {
         if (jsondata['ready'] == true) {
           console.log("worker " + worker.id + " is ready!");
         }
-    } catch (e) {
-    }
-  console.log("msg: " + msg);
-  game_pin = msg;
+  } else if (!jsondata['json']) {
+    console.log("msg: " + jsondata['name']);
+    game_pin = jsondata['name'];
+  }
   console.log("Joining kahoot...  ");
   client.join(game_pin, 'bot' + cluster.worker.id);
   //client.join(game_pin, randomName);
