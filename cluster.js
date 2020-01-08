@@ -7,6 +7,8 @@ global.amount;
 function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
+// correct(); returns boolean; did bot get the answer right?
+// answerQuestion(1-4); answers a question;
 
 if (cluster.isMaster) {
   console.log("name: " + global.name);
