@@ -15,6 +15,12 @@ if (cluster.isMaster) {
 }
 var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
+  if (msg.contains('{"ready"')) {
+    var jsondata = JSON.parse(msg);
+    if (jsondata['ready'] == true) {
+      //tell master worker X is ready
+    }
+  }
   console.log("msg: " + msg);
   game_pin = msg;
   console.log("Joining kahoot...  ");
