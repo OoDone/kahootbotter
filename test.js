@@ -6,6 +6,6 @@ const config = {
 const search = new Searcher("January", config);
 search.search().then(results=>{
   console.log(results);
-  var dat = JSON.parse(results);
-  console.log(dat['questions']);
+  //var dat = JSON.parse(results);
+  console.log(results['questions']);
 });
