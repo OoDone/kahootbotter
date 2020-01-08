@@ -27,7 +27,10 @@ var worker;
   }
   lol();
   worker.on('message', function(msg2) {
-    console.log("Master recieved message " + msg2);
+    var data = JSON.parse(msg2);
+    var answer = data['answer'];
+    worker.send(answer);
+    console.log("Master recieved message " + data['answer']);
   });
     cluster.on('exit', function () {
         cluster.fork();
