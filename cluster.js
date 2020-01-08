@@ -26,7 +26,7 @@ if (cluster.isMaster) {
       console.log("fork runnng");
       worker = cluster.fork();
       await wait(500);
-      var data = '{"name":"' + global.name + '"}'
+      var data = '{"json":"' + true + '","name":"' + global.name + '"}'
       worker.send(data);
       //worker.send(global.rn);
       //lol sleep();
@@ -42,7 +42,7 @@ if (cluster.isMaster) {
     for (var id in cluster.workers) {
       cluster.workers[id].kill();
     }
-    var ready = '{"ready":"' + true + '"}'
+    var ready = '{"json":"' + true + '", "ready":"' + true + '"}'
     worker.send(ready);
     cluster.disconnect();
   }, 20000);
