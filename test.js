@@ -7,5 +7,5 @@ const search = new Searcher("January", config);
 search.search().then(results=>{
   console.log(results);
   //var dat = JSON.parse(results);
-  console.log(results['questions']);
+  console.log(results['title']);
 });
