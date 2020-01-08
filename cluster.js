@@ -41,9 +41,9 @@ if (cluster.isMaster) {
     }
     for (var id in cluster.workers) {
       cluster.workers[id].kill();
+      var ready = '{"json":"' + true + '", "ready":"' + true + '"}'
+      worker.send(ready);
     }
-    var ready = '{"json":"' + true + '", "ready":"' + true + '"}'
-    worker.send(ready);
     cluster.disconnect();
   }, 20000);
   //function interval() {
