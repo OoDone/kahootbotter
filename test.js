@@ -1,5 +1,5 @@
 const Searcher = require("kahoot-search");
-var search = 1;
+var search;
 function searchk() {
   search.search(o=>{
     var results2 = JSON.stringify(o);
