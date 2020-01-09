@@ -49,12 +49,14 @@ client.on("quiz", quiz => {
   //name, type, qcount, answercount
   quest = Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
+var questionnum;
+var choice;
 client.on("questionStart", question => {
   console.log("A new question has started, answeringsadasdasdsa the first answer.");
-  var questionnum = question.number - 1;
-  var choices = quest[questionnum].choices;
-  for (var i = 0; i < choices.length; i++) {
-    var answer2 = choices[i].correct;
+  questionnum = question.number - 1;
+  choice = quest[questionnum].choices;
+  for (var i = 0; i < choice.length; i++) {
+    var answer2 = choice[i].correct;
     if (answer2 == true) {
       a = answer2;
       console.log("answer: " + a);
