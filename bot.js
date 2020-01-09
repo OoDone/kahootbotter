@@ -59,10 +59,10 @@ client.on("questionStart", question => {
     var answer2 = choice[i].correct;
     if (answer2 == true) {
       a = answer2;
-      console.log("answer: " + a);
+      console.log("answer: " + answer2);
     } else {
       a = answer2;
-      console.log(" NOT answer: " + a);
+      console.log(" NOT answer: " + answer2);
     }
   }
 });
