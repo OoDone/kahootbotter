@@ -54,7 +54,8 @@ var choice;
 var answer2;
 //console.log("A new question has started, answeringsadasdasdsa the first answer.");
 client.on("questionStart", question => {
-  questionnum = question.number - 1;
+  console.log("XD");
+  questionnum = question.number;
   choice = global.question[questionnum].choices;
   for (var i = 0; i < choice.length; i++) {
     answer2 = choice[i].correct;
