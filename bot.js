@@ -8,6 +8,8 @@ var cluster = require('cluster');
 var qstart;
 var q;
 var Searchers = require('./test.js');
+var quest;
+var a;
 
 if (cluster.isMaster) {
   console.log('I am master');
@@ -45,20 +47,20 @@ client.on("quiz", quiz => {
   var xd = quiz.answerCounts[1];
   console.log(xd);
   //name, type, qcount, answercount
-  Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
+  quest = Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
-    //var answer = question.correctAnswer(1)
-  answer = cluster.worker.id - 1;
+  var questionnum = question.number - 1;
   console.log("question.quiz: " + question.quiz());
-  if (cluster.worker.id != 4) {
-    question.answer(answer);
-  } else {
-    qstart = true;
-    q = question;
+  var choices = quest[questionnum].choices;
+  for (var i = 0; i < choices.length; i++) {
+    var answer2 = choices[i].correct;
+    if (answer2 == true) {
+      a = answer2;
+      console.log("answer: " + a);
+    }
   }
-  
 });
 client.on("questionEnd", question => {
   console.log("did i get it right? " + question.correct);
