@@ -6,7 +6,7 @@ module.exports.search = function (name, type, questioncount, answercount) {
   for (var i = 0; i < answercount.length; i++) {
     amount = answercount[i] + amount;
   }
-  console.log("Amount: " + amount):
+  console.log("Amount: " + amount);
   const config = {
     questionLength: questioncount,
     limit: 1,
