@@ -1,6 +1,6 @@
 
 var cluster = require('cluster');
-var amount = 4;
+var amount = 1;
 global.name;
 global.amount;
 //global.rn;
