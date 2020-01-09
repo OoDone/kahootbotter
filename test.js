@@ -1,5 +1,16 @@
 const Searcher = require("kahoot-search");
 var search = 1;
+function searchk() {
+  search.search(o=>{
+    var results2 = JSON.stringify(o);
+    //console.log(results['title']);
+    //console.log(results2);
+    var dat = JSON.parse(results2);
+    var results = dat.kahoot;
+    console.log(results);
+  }).then(results=>{
+  });
+}
 module.exports.searchs = function (name, type, questioncount, answercount) {
   var amount;
   for (var i = 0; i < answercount.length; i++) {
@@ -14,15 +25,4 @@ module.exports.searchs = function (name, type, questioncount, answercount) {
   };
   search = new Searcher(name, config);
   searchk();
-}
-function searchk() {
-search.search(o=>{
-  var results2 = JSON.stringify(o);
-  //console.log(results['title']);
-  //console.log(results2);
-  var dat = JSON.parse(results2);
-  var results = dat.kahoot;
-  console.log(results);
-}).then(results=>{
-});
 }
