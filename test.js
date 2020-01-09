@@ -2,7 +2,7 @@ const Searcher = require("kahoot-search");
 var search;
 function searchk() {
   search.search(o=>{
-    var xd = o.kahoot.questions;
+    var xd = o.kahoot.questions['0'].choices['0'];
     var results2 = JSON.stringify(o);
     var results3 = JSON.stringify(xd);
     //console.log(results['title']);
