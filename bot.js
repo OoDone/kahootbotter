@@ -47,7 +47,7 @@ client.on("quiz", quiz => {
   var xd = quiz.answerCounts[1];
   console.log(xd);
   //name, type, qcount, answercount
-  quest = Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
+  Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
 var questionnum;
 var choice;
@@ -55,7 +55,7 @@ var answer2;
 client.on("questionStart", question => {
   console.log("A new question has started, answeringsadasdasdsa the first answer.");
   questionnum = question.number - 1;
-  choice = quest[questionnum].choice;
+  choice = global.question[questionnum].choices;
   for (var i = 0; i < choice.length; i++) {
     answer2 = choice[i].correct;
     if (answer2 == true) {
