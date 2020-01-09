@@ -52,7 +52,7 @@ client.on("quiz", quiz => {
 //console.log("A new question has started, answeringsadasdasdsa the first answer.");
 client.on("questionStart", question => {
   console.log("XD");
-  console.log("lOl"):
+  console.log("lOl");
   var questionnum = question.number;
   var choice = global.question[questionnum].choices;
   for (var i = 0; i < choice.length; i++) {
