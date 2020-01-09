@@ -50,9 +50,9 @@ client.on("quiz", quiz => {
   quest = Searchers.searchs(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
 client.on("questionStart", question => {
-    console.log("A new question has started, answering the first answer.");
-  var questionnum = question.number - 1;
+  console.log("A new question has started, answeringsadasdasdsa the first answer.");
   console.log("question.quiz: " + question.quiz());
+  var questionnum = question.number - 1;
   var choices = quest[questionnum].choices;
   for (var i = 0; i < choices.length; i++) {
     var answer2 = choices[i].correct;
