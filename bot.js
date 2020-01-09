@@ -59,6 +59,9 @@ client.on("questionStart", question => {
     if (answer2 == true) {
       a = answer2;
       console.log("answer: " + a);
+    } else {
+      a = answer2;
+      console.log(" NOT answer: " + a);
     }
   }
 });
