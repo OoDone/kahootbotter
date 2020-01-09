@@ -1,13 +1,13 @@
 const Searcher = require("kahoot-search");
-const search = 1;
-const config = 1;
+var search = 1;
+var config = 1;
 module.exports.search = function (name, type, questioncount, answercount) {
   var amount;
   for (var i = 0; i < answercount.length; i++) {
     amount = answercount[i] + amount;
   }
   console.log("Amount: " + amount);
-  const config = {
+  config = {
     questionLength: questioncount,
     limit: 1,
     type: type,
