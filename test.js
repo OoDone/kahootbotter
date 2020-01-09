@@ -22,6 +22,6 @@ module.exports.searchs = function (name, type, questioncount, answercount) {
     type: type,
     searchStrictly: true
   };
-  search = new Searcher(name);
+  search = new Searcher(name, config);
   searchk();
 }
