@@ -39,6 +39,8 @@ client.on("joined", () => {
 client.on("quiz", quiz => {
   console.log( "client.name: " + quiz.name);
   console.log( "client.type: " + quiz.type);
+  console.log( "client.questionCount: " + quiz.questionCount);
+  console.log( "client.answerCounts: " + quiz.answerCounts);
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
