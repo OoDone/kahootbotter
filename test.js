@@ -8,7 +8,6 @@ function searchk() {
     var dat = JSON.parse(results2);
     var results = dat.kahoot;
     console.log(results);
-  }).then(results=>{
   });
 }
 module.exports.searchs = function (name, type, questioncount, answercount) {
