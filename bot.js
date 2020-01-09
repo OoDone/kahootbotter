@@ -7,7 +7,7 @@ var game_pin = 0;
 var cluster = require('cluster');
 var qstart;
 var q;
-var Searcher = require('test.js');
+var Searcher = require('./test.js');
 
 if (cluster.isMaster) {
   console.log('I am master');
