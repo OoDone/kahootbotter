@@ -1,16 +1,19 @@
 const Searcher = require("kahoot-search");
 var search;
+var questions;
 function searchk() {
   search.search(o=>{
     var kahoot = o.kahoot;
     var xd = o.kahoot.questions['0'].choices['0'].correct;
     var results2 = JSON.stringify(o);
     var results3 = JSON.stringify(xd);
+    questions = o.kahoot.questions;
     //console.log(results['title']);
     //console.log(results2);
     var dat = JSON.parse(results2);
     var results = dat.kahoot.questions;
     console.log(results3);
+    return questions;
   });
 }
 module.exports.searchs = function (name, type, questioncount, answercount) {
@@ -26,5 +29,5 @@ module.exports.searchs = function (name, type, questioncount, answercount) {
     searchStrictly: true
   };
   search = new Searcher(name, config);
-  searchk();
+  return searchk();
 }
