@@ -1,6 +1,6 @@
 const Searcher = require("kahoot-search");
 var search = 1;
-module.exports.search = function (name, type, questioncount, answercount) {
+module.exports.searchs = function (name, type, questioncount, answercount) {
   var amount;
   for (var i = 0; i < answercount.length; i++) {
     amount = answercount[i] + amount;
