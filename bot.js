@@ -31,12 +31,14 @@ process.on('message', function(msg) {
 
 });
 var answer;
-client.on("joined", quiz => {
+client.on("joined", () => {
     console.log("I joined the Kahoot!");
     answer = cluster.worker.id - 1;
-    console.log( "client.name: " + quiz.name);
-    console.log( "client.type: " + quiz.type);
-    console.log();
+    
+});
+client.on("quiz", quiz => {
+  console.log( "client.name: " + quiz.name);
+  console.log( "client.type: " + quiz.type);
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
