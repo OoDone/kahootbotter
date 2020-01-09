@@ -6,7 +6,7 @@ function searchk() {
     //console.log(results['title']);
     //console.log(results2);
     var dat = JSON.parse(results2);
-    var results = dat.kahoot;
+    var results = dat.kahoot.questions;
     console.log(results);
   });
 }
