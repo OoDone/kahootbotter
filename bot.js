@@ -42,7 +42,7 @@ client.on("quiz", quiz => {
   console.log( "client.type: " + quiz.type);
   console.log( "client.questionCount: " + quiz.questionCount);
   //console.log( "client.answerCounts: " + quiz.answerCounts);
-  var xd = quiz.answercounts[1];
+  var xd = quiz.answerCounts[1];
   console.log(xd);
   //name, type, qcount, answercount
   //Searcher.search(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
