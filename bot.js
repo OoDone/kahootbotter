@@ -45,7 +45,7 @@ client.on("quiz", quiz => {
   var xd = quiz.answerCounts[1];
   console.log(xd);
   //name, type, qcount, answercount
-  //Searcher.search(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
+  Searcher.search(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
