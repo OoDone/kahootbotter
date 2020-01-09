@@ -6,7 +6,7 @@ search.search(o=>{
   //console.log(results['title']);
   //console.log(results2);
   var dat = JSON.parse(results2);
-  var results = dat.kahoot.title;
+  var results = dat.kahoot;
   console.log(results);
 }).then(results=>{
 });
