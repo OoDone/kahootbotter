@@ -14,7 +14,9 @@ module.exports.search = function (name, type, questioncount, answercount) {
     searchStrictly: true
   };
   search = new Searcher(name, config);
+  searchk();
 }
+function searchk() {
 search.search(o=>{
   var results2 = JSON.stringify(o);
   //console.log(results['title']);
@@ -24,3 +26,4 @@ search.search(o=>{
   console.log(results);
 }).then(results=>{
 });
+}
