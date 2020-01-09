@@ -23,6 +23,6 @@ module.exports.searchs = function (name, type, questioncount, answercount) {
     type: type,
     searchStrictly: true
   };
-  search = new Searcher(name, config);
+  search = new Searcher(name);
   searchk();
 }
