@@ -19,7 +19,7 @@ module.exports.searchs = function (name, type, questioncount, answercount) {
   const config = {
     questionLength: questioncount,
     limit: 1,
-    type: type,
+    type: [type],
     searchStrictly: true
   };
   search = new Searcher(name, config);
