@@ -34,8 +34,8 @@ var answer;
 client.on("joined", () => {
     console.log("I joined the Kahoot!");
     answer = cluster.worker.id - 1;
-    console.log( "client.name: " + client.name);
-    console.log( "client.type: " + client.type);
+    console.log( "client.name: " + client.quiz.name);
+    console.log( "client.type: " + client.quiz.type);
     console.log();
 });
 client.on("questionStart", question => {
