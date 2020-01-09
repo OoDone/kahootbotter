@@ -13,9 +13,9 @@ function searchk() {
 }
 module.exports.searchs = function (name, type, questioncount, answercount) {
   var amount;
-  for (var i = 0; i < answercount.length; i++) {
+  /*for (var i = 0; i < answercount.length; i++) {
     amount = answercount[i] + amount;
-  }
+  }*/
   console.log("Amount: " + amount);
   const config = {
     questionLength: questioncount,
