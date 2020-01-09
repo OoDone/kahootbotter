@@ -7,6 +7,7 @@ var game_pin = 0;
 var cluster = require('cluster');
 var qstart;
 var q;
+var Searcher = require('test.js');
 
 if (cluster.isMaster) {
   console.log('I am master');
@@ -40,7 +41,11 @@ client.on("quiz", quiz => {
   console.log( "client.name: " + quiz.name);
   console.log( "client.type: " + quiz.type);
   console.log( "client.questionCount: " + quiz.questionCount);
-  console.log( "client.answerCounts: " + quiz.answerCounts);
+  //console.log( "client.answerCounts: " + quiz.answerCounts);
+  var xd = quiz.answercounts[1];
+  console.log(xd):
+  //name, type, qcount, answercount
+  //Searcher.search(quiz.name, quiz.type, quiz.questioncount, quiz.answerCounts);
 });
 client.on("questionStart", question => {
     console.log("A new question has started, answering the first answer.");
