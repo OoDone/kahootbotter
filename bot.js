@@ -54,8 +54,9 @@ client.on("quiz", quiz => {
 client.on("questionStart", question => {
   var questionnum = question.number - 1;
   console.log(questionnum);
+  console.log(quest);
   quest = JSON.parse(quest);
-  console.log(quest[questionnum].choices);
+  console.log(quest);//[questionnum].choices);
   var c = quest[questionnum];//.choices;
   console.log('c: ' + c);
   var i;
