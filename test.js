@@ -1,18 +1,17 @@
 const Searcher = require("kahoot-search");
 var search;
-var questions;
 function searchk() {
   search.search(o=>{
     var kahoot = o.kahoot;
     var xd = o.kahoot.questions['0'].choices['0'].correct;
     var results2 = JSON.stringify(o);
     var results3 = JSON.stringify(xd);
-    questions = o.kahoot.questions;
+    var questions = o.kahoot.questions;
     //console.log(results['title']);
     //console.log(results2);
     var dat = JSON.parse(results2);
     var results = dat.kahoot.questions;
-    console.log(results3);
+    console.log("x: " + results3);
     global.quest = questions;
   });
 }
