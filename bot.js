@@ -66,6 +66,7 @@ client.on("questionStart", question => {
       var cnum = i;
       console.log(cnum + " IS the answer!!!!!!!!");
       global.answer = cnum;
+      client.answer(cnum);
     } else {
       a = answer2;
       var cnumw = i;
