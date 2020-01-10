@@ -8,7 +8,7 @@ var cluster = require('cluster');
 var qstart;
 var q;
 var Searchers = require('./test.js');
-var quest;
+var quest = global.quest;
 var a;
 
 if (cluster.isMaster) {
@@ -54,8 +54,8 @@ client.on("questionStart", question => {
   console.log("XD");
   var questionnum = question.number;
   console.log(questionnum);
-  var choice = global.quest[questionnum].choices;
-  console.log(choice);
+  var choice = quest[questionnum].choices;
+  console.log("quest: " + choice);
   for (var i = 0; i < choice.length; i++) {
     var answer2 = choice[i].correct;
     if (answer2 == true) {
