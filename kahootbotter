@@ -1,10 +1,14 @@
 #!/usr/bin/env node
+var name2;
 //console.log('kahootbotter command' + process.argv[2]);
 if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
-  global.bname = process.argv[3];
+  name = process.argv[3];
   console.log("bname: " + global.bname + " name: " + global.name);
   require('./cluster.js');
 } else if (process.argv[2] == null) {
   console.log("Usage: kahootbotter <game pin> <name>");
+}
+module.exports.name = function () {
+  return name2;
 }
