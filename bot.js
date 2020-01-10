@@ -54,7 +54,7 @@ client.on("questionStart", question => {
   console.log("XD");
   var questionnum = question.number;
   console.log(questionnum);
-  var choice = global.question[questionnum].choices;
+  var choice = global.quest[questionnum].choices;
   console.log(choice);
   for (var i = 0; i < choice.length; i++) {
     var answer2 = choice[i].correct;
