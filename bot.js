@@ -51,8 +51,8 @@ client.on("quiz", quiz => {
 });
 //console.log("A new question has started, answeringsadasdasdsa the first answer.");
 client.on("questionStart", question => {
-  console.log("XD");
-  var questionnum = question.number;
+  console.log("XD" + question);
+  var questionnum = question.number - 1;
   console.log(questionnum);
   var choice = quest[questionnum].choices;
   console.log("quest: " + choice);
