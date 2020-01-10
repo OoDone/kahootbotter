@@ -3,7 +3,7 @@
 if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
   global.bname = process.argv[3];
-  console.log("bname: " + global.bname + " name: " + global.name):
+  console.log("bname: " + global.bname + " name: " + global.name);
   require('./cluster.js');
 } else if (process.argv[2] == null) {
   console.log("Usage: kahootbotter <game pin> <name>");
