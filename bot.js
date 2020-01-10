@@ -9,6 +9,7 @@ var qstart;
 var q;
 var Searchers = require('./test.js');
 global.quest;
+global.bname;
 //var quest = global.quest;
 var a;
 
