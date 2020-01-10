@@ -54,10 +54,10 @@ client.on("questionStart", question => {
   console.log("XD " + JSON.parse(question));
   var questionnum = question.number - 1;
   console.log(questionnum);
-  var choice = quest[questionnum].choices;
-  console.log("quest: " + choice);
-  for (var i = 0; i < choice.length; i++) {
-    var answer2 = choice[i].correct;
+  var c = quest[questionnum].choices;
+  console.log("quest: " + c);
+  for (var i = 0; i < c.length; i++) {
+    var answer2 = c[i].correct;
     if (answer2 == true) {
       a = answer2;
       console.log("answer: " + answer2);
