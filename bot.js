@@ -9,7 +9,7 @@ var qstart;
 var q;
 var Searchers = require('./test.js');
 global.quest;
-var quest = global.quest;
+//var quest = global.quest;
 var a;
 
 if (cluster.isMaster) {
@@ -54,10 +54,10 @@ client.on("quiz", quiz => {
 client.on("questionStart", question => {
   var questionnum = question.number - 1;
   console.log(questionnum);
-  console.log(quest);
-  quest = JSON.parse(quest);
-  console.log(quest);//[questionnum].choices);
-  var c = quest[questionnum];//.choices;
+  console.log(global.quest);
+  global.quest = JSON.parse(global.quest);
+  console.log(global.quest);//[questionnum].choices);
+  var c = global.quest[questionnum];//.choices;
   console.log('c: ' + c);
   var i;
   for (i = 0; i < c.length; i++) {
