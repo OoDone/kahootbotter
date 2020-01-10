@@ -3,7 +3,7 @@ var name2;
 //console.log('kahootbotter command' + process.argv[2]);
 if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
-  name2 = process.argv[3];
+  name2 = process.argv[4];
   console.log("bname: " + global.bname + " name: " + global.name);
   require('./cluster.js');
 } else if (process.argv[2] == null) {
