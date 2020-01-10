@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 //console.log('kahootbotter command' + process.argv[2]);
-if ((process.argv[2] != null)) {
+if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
+  global.bname = process.argv[3];
   require('./cluster.js');
 } else if (process.argv[2] == null) {
-  console.log("Usage: kahootbotter <game pin>");
+  console.log("Usage: kahootbotter <game pin> <name>");
+} else {
+  console.log("Usage: kahootbotter <game pin> <name>");
 }
