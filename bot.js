@@ -57,10 +57,9 @@ client.on("questionStart", question => {
   console.log("XDDD2:" + global.quest);
   console.log("XDDDD: " + JSON.parse(global.quest));//[questionnum].choices);
   var kasd = JSON.parse(global.quest);
-  var c = kasd[questionnum];//.choices;
+  var c = kasd[questionnum].choices;
   console.log('c: ' + c);
-  var i;
-  for (i = 0; i < c.length; i++) {
+  for (var i = 0; i < c.length; i++) {
     var answer2 = c[i].correct;
     if (answer2 == true) {
       a = answer2;
