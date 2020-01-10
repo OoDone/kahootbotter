@@ -8,6 +8,7 @@ var cluster = require('cluster');
 var qstart;
 var q;
 var Searchers = require('./test.js');
+const n = require('./kahootbotter');
 global.quest;
 global.bname;
 //var quest = global.quest;
@@ -26,7 +27,7 @@ var randomnumber = Math.round(Math.random() * 3);
   game_pin = msg;
   console.log("Joining kahoot...  ");
   //client.join(game_pin, 'bot' + cluster.worker.id);
-  var na = global.bname;
+  var na = n.name;
   client.join(game_pin, na);
 
 });
