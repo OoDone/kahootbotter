@@ -13,7 +13,7 @@ function searchk() {
     var dat = JSON.parse(results2);
     var results = dat.kahoot.questions;
     console.log(results3);
-    global.questions = questions;
+    global.quest = questions;
   });
 }
 module.exports.searchs = function (name, type, questioncount, answercount) {
