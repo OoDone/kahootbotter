@@ -9,6 +9,6 @@ if ((process.argv[2] != null) && (process.argv[3] != null)) {
 } else if (process.argv[2] == null) {
   console.log("Usage: kahootbotter <game pin> <name>");
 }
-modules.exports.name = function () {
+module.exports.name = function () {
   return name2;
 }
