@@ -2,11 +2,12 @@ const Searcher = require("kahoot-search");
 var search;
 function searchk() {
   search.search(o=>{
-    var kahoot = o.kahoot;
+    var kahoo = o.kahoot;
     var xd = o.kahoot.questions['0'].choices['0'].correct;
     var results2 = JSON.stringify(o);
     var results3 = JSON.stringify(xd);
     var questions = o.kahoot.questions;
+    questions = JSON.stringify(questions);
     //console.log(results['title']);
     //console.log(results2);
     var dat = JSON.parse(results2);
