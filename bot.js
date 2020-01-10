@@ -20,18 +20,11 @@ if (cluster.isMaster) {
   console.log('I am worker #' + cluster.worker.id);
 }
 var randomnumber = Math.round(Math.random() * 3);
-process.on('message', function(msg) {
-  if (msg < 5) {
-    //if (qstart == true) {
-      q.answer(msg);
-    //}
-  } else {
   console.log("msg: " + msg);
   game_pin = msg;
   console.log("Joining kahoot...  ");
   client.join(game_pin, 'bot' + cluster.worker.id);
   //client.join(game_pin, randomName);
-  }
 
 });
 var answer;
@@ -80,7 +73,7 @@ client.on("questionEnd", question => {
   if (correct) {
     console.log("YES TRIGGERED");
     var data = '{"answer":"' + answer + '"}'
-    process.send(data);
+    //process.send(data);
   } else {
     console.log("YES TRIGGERED but got answer wrong :(");
   }
