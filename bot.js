@@ -63,10 +63,12 @@ client.on("questionStart", question => {
     var answer2 = c[i].correct;
     if (answer2 == true) {
       a = answer2;
-      console.log("answer: " + answer2);
+      var cnum = i;
+      console.log(cnum + " IS the answer!!!!!!!!");
     } else {
       a = answer2;
-      console.log(" NOT answer: " + answer2);
+      var cnumw = i;
+      console.log(cnumw + " Is NOT the answer :( :( :( :(");
     }
   }
 });
