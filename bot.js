@@ -19,6 +19,7 @@ if (cluster.isMaster) {
 } else if (cluster.isWorker) {
   console.log('I am worker #' + cluster.worker.id);
 }
+process.on('message', function(msg) {
 var randomnumber = Math.round(Math.random() * 3);
   console.log("msg: " + msg);
   game_pin = msg;
