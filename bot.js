@@ -51,12 +51,13 @@ client.on("quiz", quiz => {
 });
 //console.log("A new question has started, answeringsadasdasdsa the first answer.");
 client.on("questionStart", question => {
-  console.log(question);
   var questionnum = question.number - 1;
   console.log(questionnum);
+  console.log(quest[questionnum].choices);
   var c = quest[questionnum].choices;
-  console.log(c);
-  for (var i = 0; i < c.length; i++) {
+  console.log('c: ' + c);
+  var i;
+  for (i = 0; i < c.length; i++) {
     var answer2 = c[i].correct;
     if (answer2 == true) {
       a = answer2;
