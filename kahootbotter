@@ -7,6 +7,4 @@ if ((process.argv[2] != null) && (process.argv[3] != null)) {
   require('./cluster.js');
 } else if (process.argv[2] == null) {
   console.log("Usage: kahootbotter <game pin> <name>");
-} else {
-  console.log("Usage: kahootbotter <game pin> <name>");
 }
