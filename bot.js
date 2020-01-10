@@ -24,8 +24,8 @@ var randomnumber = Math.round(Math.random() * 3);
   console.log("msg: " + msg);
   game_pin = msg;
   console.log("Joining kahoot...  ");
-  client.join(game_pin, 'bot' + cluster.worker.id);
-  //client.join(game_pin, randomName);
+  //client.join(game_pin, 'bot' + cluster.worker.id);
+  client.join(game_pin, global.bname);
 
 });
 var answer;
