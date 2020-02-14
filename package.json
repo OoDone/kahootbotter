@@ -5,28 +5,24 @@
     "main": "index.js",
     "author": "Github: OoDone",
     "bin": {
-       "kahootbotter": "./kahootbotter",
-       "kahootbotter": "./kahootbotter"
+        "kahootbotter": "./kahootbotter"
     },
-       "publishConfig": {
-       "access": "public"
+    "publishConfig": {
+        "access": "public"
     },
     "scripts": {
         "start": "node index.js"
     },
-    "keywords": [
-       "kahootbotter",
-       "kahootbotter"
-    ],
+    "keywords": [],
     "dependencies": {
-        "nodejs-randomnames": "latest",
-        "kahoot.js-updated": "latest"
+        "kahoot-search": "^1.0.1",
+        "kahoot.js-updated": "^1.2.0",
+        "nodejs-randomnames": "^1.0.1"
     },
     "repository": {
         "type": "git",
         "url": ""
     },
-    "keywords": [],
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/JE5143/KahootBotter/issues"
