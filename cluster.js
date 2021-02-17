@@ -3,7 +3,7 @@ var cluster = require('cluster');
 var amount = global.amount;
 global.name;
 global.amount;
-//global.rn;
+global.delay;
 function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
@@ -17,7 +17,7 @@ if (cluster.isMaster) {
     for (var i = 0; i < amount; i += 1) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       var worker = cluster.fork();
-      await wait(500);
+      await wait(global.delay);
       worker.send(global.name);
       //worker.send(global.rn);
       //lol sleep();

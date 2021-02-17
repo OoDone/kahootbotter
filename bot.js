@@ -1,11 +1,9 @@
 var Kahoot = require('kahoot.js-updated');
 var client = new Kahoot;
-var NameGenerator = require('nodejs-randomnames');
-var randomName = NameGenerator.getRandomName();
-//const cluster = require('cluster');
-var game_pin = 0;
 var cluster = require('cluster');
-
+function wait(milleseconds) {
+  return new Promise(resolve => setTimeout(resolve, milleseconds))
+}
 if (cluster.isMaster) {
   console.log('I am master');
   cluster.fork();
@@ -13,24 +11,23 @@ if (cluster.isMaster) {
 } else if (cluster.isWorker) {
   console.log('I am worker #' + cluster.worker.id);
 }
-var randomnumber = Math.round(Math.random() * 3);
 process.on('message', function(msg) {
   console.log("msg: " + msg);
-  game_pin = msg;
+  var game_pin = msg;
   console.log("Joining kahoot...  ");
   client.join(game_pin, 'Mike Hawk ' + cluster.worker.id);
   //client.join(game_pin, randomName);
-
 });
-client.on("joined", () => {
+client.on("Joined", () => {
     console.log("I joined the Kahoot!");
 });
-client.on("questionStart", question => {
+client.on("QuestionStart", async question => {
     console.log("A new question has started, answering the first answer.");
     //var answer = question.correctAnswer(1)
-    question.answer(randomnumber);
-    randomnumber = Math.floor(Math.random() * 3);
+    await wait(cluster.worker.id * 15);
+    client.answer(Math.floor(Math.random() * 4));
 });
-client.on("quizEnd", () => {
+client.on("Disconnect", () => {
     console.log("The quiz has ended. - bot" + cluster.worker.id);
 });
+ 
