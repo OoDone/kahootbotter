@@ -19,7 +19,7 @@ if (cluster.isMaster) {
       cluster.setupMaster({ exec: __dirname + '/bot.js',});
       var worker = cluster.fork();
       await wait(global.delay);
-      worker.send(global.name);
+      worker.send(global.name, + ":" + global.2FA);
       //worker.send(global.2FA);
       //worker.send(global.rn);
       //lol sleep();
