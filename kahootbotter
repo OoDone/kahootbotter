@@ -3,10 +3,11 @@
 if ((process.argv[2] != null) && (process.argv[3] != null)) {
   global.name = process.argv[2];
   global.amount = process.argv[3];
-  global.delay = process.argv[4];
+  global.2FA = process.argv[4];
+  global.delay = process.argv[5];
   require('./cluster.js');
 } else if (process.argv[2] == null) {
-  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)> [<delay>]");
+  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)> [<2fa>] [<delay>]");
 } else if (process.argv[3] == null) {
-  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)> [<delay>]");
+  console.log("Usage: kahootbotter <game pin> <amount of bots(no limit)> [<2fa>] [<delay>]");
 }
