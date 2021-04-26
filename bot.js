@@ -13,7 +13,11 @@ if (cluster.isMaster) {
 }
 process.on('message', function(msg) {
   console.log("msg: " + msg);
-  var game_pin = msg;
+  var game_pin = msg.split(':')[0];
+  var 2FA = msg.split(':')[1];
+  if (2FA != null || "") {
+    console.log("2fa code NOT null");
+  }
   console.log("Joining kahoot...  ");
   client.join(game_pin, 'Mike Hawk ' + cluster.worker.id);
   //client.join(game_pin, randomName);
