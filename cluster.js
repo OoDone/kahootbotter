@@ -4,6 +4,7 @@ var amount = global.amount;
 global.name;
 global.amount;
 global.delay;
+global.2FA;
 function wait(milleseconds) {
   return new Promise(resolve => setTimeout(resolve, milleseconds))
 }
@@ -19,6 +20,7 @@ if (cluster.isMaster) {
       var worker = cluster.fork();
       await wait(global.delay);
       worker.send(global.name);
+      //worker.send(global.2FA);
       //worker.send(global.rn);
       //lol sleep();
     }
